@@ -87,7 +87,7 @@
                     src += '100% { ' + direct + ':0; opacity:1; }\n';
 
                     if (opts.indexes)
-                        srcIndex += (100 - framePercentSpan) + '%, ' + (itemPercentSpan - framePercentSpan) + '% { background:' + opts.indexes.activeBackground + ';}\n' + itemPercentSpan + '%, ' + (100 - framePercentSpan) + '% {background:' + opts.indexes.normalBackground + '; }}\n'
+                        srcIndex += (100 - framePercentSpan) + '%, ' + (itemPercentSpan - framePercentSpan) + '% { background:' + (opts.indexes.activeBackground || '#00a3ce') + ';}\n' + itemPercentSpan + '%, ' + (100 - framePercentSpan) + '% {background:' + (opts.indexes.normalBackground || '#ddd') + '; }}\n'
 
                 } else {
                     src += '0% { ' + direct + ':-' + shift + 'px; opacity:0; }\n';
@@ -104,7 +104,7 @@
                     }
 
                     if (opts.indexes)
-                        srcIndex += (index * itemPercentSpan - framePercentSpan) + '%, ' + ((index + 1) * itemPercentSpan - framePercentSpan) + '% {background:' + (opts.indexes.activeBackground || 'red') + '; }\n ' + ((index + 1) * itemPercentSpan) + '%, ' + (index * itemPercentSpan - framePercentSpan) + '% {\nbackground:' + (opts.indexes.normalBackground || '#ccc') + ';}}\n';
+                        srcIndex += (index * itemPercentSpan - framePercentSpan) + '%, ' + ((index + 1) * itemPercentSpan - framePercentSpan) + '% {background:' + (opts.indexes.activeBackground || '#00a3ce') + '; }\n ' + ((index + 1) * itemPercentSpan) + '%, ' + (index * itemPercentSpan - framePercentSpan) + '% {\nbackground:' + (opts.indexes.normalBackground || '#ccc') + ';}}\n';
                 }
 
                 src += '}\n';
